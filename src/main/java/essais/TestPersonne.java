@@ -5,23 +5,10 @@ import entites.AdressePostale;
 public class TestPersonne {
 
 	public static void main(String[] args) {
-		Personne p1 = new Personne();
-		Personne p2 = new Personne();
-		p1.prenom = "Jean-Léo";
-		p1.nom = "Dupont";
-		p1.adressePostale = new AdressePostale();
-		p1.adressePostale.nomRue = "Rue des cookies";
-		p1.adressePostale.numeroRue = 42;
-		p1.adressePostale.codePostal = 01000;
-		p1.adressePostale.Ville = "Cookieville";
-		
-		p2.prenom = "Henri-Léo";
-		p2.nom = "Dupond";
-		p2.adressePostale = new AdressePostale();
-		p2.adressePostale.nomRue = "Rue des brownies";
-		p2.adressePostale.numeroRue = 24;
-		p2.adressePostale.codePostal = 10000;
-		p2.adressePostale.Ville = "Brownieville";		
+		AdressePostale a1 = new AdressePostale(42,"Rue des cookies",01000,"Cookieville");
+		AdressePostale a2 = new AdressePostale(24,"Rue des brownies",10000,"Brownieville");
+		Personne p1 = new Personne("Dupont","Jean-Léo",a1);
+		Personne p2 = new Personne("Dupond","Henri-Léo",a2);	
 
 	}
 
