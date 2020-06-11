@@ -3,6 +3,7 @@ package fr.diginamic.banque.entites;
 public abstract class Operation {
 	private String date;
 	private float montant;
+	
 	public Operation(String date, float montant) {
 		this.date = date;
 		this.montant = montant;

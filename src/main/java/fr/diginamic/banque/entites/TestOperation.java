@@ -8,6 +8,7 @@ public class TestOperation {
 		Credit op2 = new Credit("09/06/2020",5.00F);
 		Debit op3 = new Debit("01/01/1999",20.50F);
 		Debit op4 = new Debit("25/05/2019",65456.12F);
+		Compte c = new Compte("0000",0);
 		
 		float res = 0F;
 		
@@ -18,17 +19,13 @@ public class TestOperation {
 			System.out.println("Informations du compte "+(i+1));
 			System.out.println("date : "+tabOp[i].getDate());
 			System.out.println("montant : "+montant+"€");
-
-			System.out.println("type : "+type);
-			if(type=="Crédit") {
-				res += montant;
-			}
-			else {
-				res -= montant;
-			}
+			
+			c.ajoutOperation(tabOp[i]);
+			
+			
 		}
 		
-		System.out.println("Montant global : "+res+"€");
+		System.out.println("Montant global : "+c.getSolde()+"€");
 	}
 
 }
