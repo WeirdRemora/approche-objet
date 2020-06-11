@@ -27,5 +27,7 @@ public abstract class Operation {
 		this.montant = montant;
 	}
 	
+	abstract public float diffSolde();
+	
 
 }

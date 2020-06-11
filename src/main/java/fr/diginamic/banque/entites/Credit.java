@@ -10,4 +10,11 @@ public class Credit extends Operation {
 		return "Crédit";
 	}
 
+	@Override
+	public float diffSolde() {
+		return this.getMontant();
+	}
+	
+	
+
 }

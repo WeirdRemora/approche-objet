@@ -2,10 +2,10 @@ package fr.diginamic.banque.entites;
 
 public class Compte {
 	private String num;
-	private int solde;
+	private float solde;
 	private Operation[] listeOp = {};
 	
-	public Compte(String num, int solde) {
+	public Compte(String num, float solde) {
 		this.num = num;
 		this.solde = solde;
 	}
@@ -23,11 +23,11 @@ public class Compte {
 		this.num = num;
 	}
 
-	public int getSolde() {
+	public float getSolde() {
 		return solde;
 	}
 
-	public void setSolde(int solde) {
+	public void setSolde(float solde) {
 		this.solde = solde;
 	}
 	
@@ -45,12 +45,7 @@ public class Compte {
 			nvListe[i] = listeOp[i];
 		}
 		listeOp = nvListe;
-		if(op.afficherType()=="Crédit") {
-			solde += op.getMontant();
-		}
-		else if(op.afficherType()=="Débit") {
-			solde -= op.getMontant();
-		}
+		solde += op.diffSolde();
 	}
-
+	
 }

@@ -9,4 +9,9 @@ public class Debit extends Operation {
 	public String afficherType() {
 		return "Débit";
 	}
+
+	@Override
+	public float diffSolde() {
+		return -this.getMontant();
+	}
 }

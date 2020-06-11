@@ -8,13 +8,11 @@ public class TestOperation {
 		Credit op2 = new Credit("09/06/2020",5.00F);
 		Debit op3 = new Debit("01/01/1999",20.50F);
 		Debit op4 = new Debit("25/05/2019",65456.12F);
-		Compte c = new Compte("0000",0);
-		
-		float res = 0F;
+		Compte c = new Compte("0000",0F);
+
 		
 		Operation[] tabOp = {op1,op2,op3,op4};
 		for(int i=0 ; i < tabOp.length ; i++) {
-			String type = tabOp[i].afficherType();
 			float montant = tabOp[i].getMontant();
 			System.out.println("Informations du compte "+(i+1));
 			System.out.println("date : "+tabOp[i].getDate());
