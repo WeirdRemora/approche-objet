@@ -4,12 +4,29 @@ public class Compte {
 	private String num;
 	private float solde;
 	private Operation[] listeOp = {};
+	private Client client;
 	
 	public Compte(String num, float solde) {
 		this.num = num;
 		this.solde = solde;
 	}
 
+	public Compte(String num, float solde, Client client) {
+		super();
+		this.num = num;
+		this.solde = solde;
+		this.client = client;
+	}
+
+	public void ajoutOperation(Operation op){
+		Operation[] nvListe = new Operation[listeOp.length+1];
+		for(int i=0 ; i<listeOp.length ; i++) {
+			nvListe[i] = listeOp[i];
+		}
+		listeOp = nvListe;
+		solde += op.diffSolde();
+	}
+	
 	@Override
 	public String toString() {
 		return "Compte [num=" + num + ", solde=" + solde + "]";
@@ -39,13 +56,12 @@ public class Compte {
 		this.listeOp = listeOp;
 	}
 
-	public void ajoutOperation(Operation op){
-		Operation[] nvListe = new Operation[listeOp.length+1];
-		for(int i=0 ; i<listeOp.length ; i++) {
-			nvListe[i] = listeOp[i];
-		}
-		listeOp = nvListe;
-		solde += op.diffSolde();
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
 	}
 	
 }

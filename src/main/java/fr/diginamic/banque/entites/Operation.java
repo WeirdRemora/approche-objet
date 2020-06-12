@@ -10,6 +10,9 @@ public abstract class Operation {
 	}
 	
 	abstract String afficherType();
+	
+	abstract public float diffSolde();
+
 
 	public String getDate() {
 		return date;
@@ -26,8 +29,5 @@ public abstract class Operation {
 	public void setMontant(float montant) {
 		this.montant = montant;
 	}
-	
-	abstract public float diffSolde();
-	
 
 }
