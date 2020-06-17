@@ -25,7 +25,7 @@ public class TestPays {
 			}
 		}
 		
-		System.out.println("Pays avec le PIB le plus important : "+paysPIBMax);
+		System.out.println("Pays avec le PIB par habitant le plus important : "+paysPIBMax);
 		
 		//Recherchez le pays avec le PIB total le plus important
 		Pays paysPIBTotMax=setPays.iterator().next();
@@ -38,16 +38,22 @@ public class TestPays {
 		
 		System.out.println("Pays avec le PIB total le plus important : "+paysPIBTotMax);
 		
-		//Modifiez le contenu du HashSet pour mettre en majuscule le pays qui a le PIB total le
+		//Modifiez le contenu du HashSet pour mettre en majuscule le pays qui a le PIB par habitant le
 		//plus petit
+		Pays paysPIBMin=setPays.iterator().next();
+		for (Pays pays : setPays) {
+			if(pays.getPIBhab() < paysPIBMin.getPIBhab()) {
+				paysPIBMin = pays;
+			}
+		}
+		paysPIBMin.setNom(paysPIBMin.getNom().toUpperCase());
+		
 		Pays paysPIBTotMin=setPays.iterator().next();
 		for (Pays pays : setPays) {
 			if(pays.PIBtot() < paysPIBTotMin.PIBtot()) {
 				paysPIBTotMin = pays;
 			}
 		}
-		paysPIBTotMin.setNom(paysPIBTotMin.getNom().toUpperCase());
-		
 		System.out.println("Pays avec le PIB total le plus petit : "+paysPIBTotMin);
 		
 		//Supprimez le pays dont le PIB total est le plus petit
