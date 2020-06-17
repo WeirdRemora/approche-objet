@@ -18,45 +18,36 @@ public class TestPays {
 		setPays.add(new Pays("Inde", 1_386_249_417, 5174));
 		
 		//Recherchez le pays avec le PIB/habitant le plus important
-		Iterator<Pays> iterator = setPays.iterator();
-		Pays paysPIBMax=null;
-		double PIBmax = iterator.next().getPIBhab();
-		while(iterator.hasNext()) {
-			Pays pays = iterator.next();
-			if(pays.getPIBhab() > PIBmax) {
-				PIBmax = pays.getPIBhab();
+		Pays paysPIBMax=setPays.iterator().next();
+		for(Pays pays : setPays) {
+			if(pays.getPIBhab() > paysPIBMax.getPIBhab()) {
 				paysPIBMax = pays;
 			}
 		}
+		
 		System.out.println("Pays avec le PIB le plus important : "+paysPIBMax);
 		
 		//Recherchez le pays avec le PIB total le plus important
-		iterator = setPays.iterator();
-		Pays paysPIBTotMax=null;
-		Pays paysPIBTotMin=null;
-		double PIBTotMax = iterator.next().PIBtot();
-		double PIBTotMin = PIBTotMax;
-		while(iterator.hasNext()) {
-			Pays pays = iterator.next();
-			if(pays.PIBtot() > PIBTotMax) {
-				PIBTotMax = pays.PIBtot();
+		Pays paysPIBTotMax=setPays.iterator().next();
+		for (Pays pays : setPays) {
+			if(pays.PIBtot() > paysPIBTotMax.PIBtot()) {
 				paysPIBTotMax = pays;
 			}
-			if(pays.PIBtot() < PIBTotMin) {
-				PIBTotMin = pays.PIBtot();
-				paysPIBTotMin = pays;
-			}
 		}
+		
+		
 		System.out.println("Pays avec le PIB total le plus important : "+paysPIBTotMax);
 		
 		//Modifiez le contenu du HashSet pour mettre en majuscule le pays qui a le PIB total le
 		//plus petit
-		iterator = setPays.iterator();
-		while(iterator.hasNext()) {
-			if(iterator.next().equals(paysPIBTotMin)) {
-				paysPIBTotMin.setNom(paysPIBTotMin.getNom().toUpperCase());
+		Pays paysPIBTotMin=setPays.iterator().next();
+		for (Pays pays : setPays) {
+			if(pays.PIBtot() < paysPIBTotMin.PIBtot()) {
+				paysPIBTotMin = pays;
 			}
 		}
+		paysPIBTotMin.setNom(paysPIBTotMin.getNom().toUpperCase());
+		
 		System.out.println("Pays avec le PIB total le plus petit : "+paysPIBTotMin);
 		
 		//Supprimez le pays dont le PIB total est le plus petit
