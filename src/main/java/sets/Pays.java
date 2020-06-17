@@ -1,6 +1,6 @@
 package sets;
 
-public class Pays {
+public class Pays implements Comparable<Pays> {
 	private String nom;
 	private int nbHab;
 	private double PIBhab;
@@ -52,7 +52,14 @@ public class Pays {
 	}
 	@Override
 	public String toString() {
-		return nom + ": Nombre d'habitants = " + nbHab + ", PIB total = " + this.PIBtot()+"\n";
+		return nom + ": Nb habitants = " + nbHab + ", Pib/Hab = "+ PIBhab + ", PIB total = " + this.PIBtot()+"\n";
+	}
+
+	@Override
+	public int compareTo(Pays pays) {
+		Double d1 = this.PIBhab;
+		Double d2 = pays.PIBhab;
+		return d1.compareTo(d2);
 	}
 	
 
