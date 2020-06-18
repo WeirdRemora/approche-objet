@@ -1,5 +1,6 @@
 package fr.diginamic.recensement;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class RecherchePopulationRegion extends MenuService {
@@ -20,8 +21,9 @@ public class RecherchePopulationRegion extends MenuService {
 				populationRegion += ville.getPopulation();
 			}
 		}
+		//population avec espaces entre les nombres (ex: 100 000 000)
 		System.out.println("Population de "+nomRegion+" :\n"
-				+ populationRegion);
+				+ NumberFormat.getIntegerInstance().format(populationRegion));
 	}
 
 }

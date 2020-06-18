@@ -1,5 +1,6 @@
 package fr.diginamic.recensement;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class RecherchePopulationDepartement extends MenuService {
@@ -16,8 +17,9 @@ public class RecherchePopulationDepartement extends MenuService {
 				populationDepartement += ville.getPopulation();
 			}
 		}
+		//population avec espaces entre les nombres (ex: 100 000 000)
 		System.out.println("Population du département de code "+codeDepartement+" :\n"
-				+ populationDepartement);
+				+ NumberFormat.getIntegerInstance().format(populationDepartement));
 	}
 
 }

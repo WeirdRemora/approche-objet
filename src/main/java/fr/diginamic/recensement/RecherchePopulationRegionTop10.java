@@ -1,5 +1,6 @@
 package fr.diginamic.recensement;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -43,7 +44,8 @@ public class RecherchePopulationRegionTop10 extends MenuService {
 			for(String nomRegion : mapRegions.keySet()) {
 				//si la valeur correspond, on affiche
 				if(mapRegions.get(nomRegion) == population) {
-					System.out.println(nomRegion+" : "+listePopulations.get(i)+" habitants");
+					//population avec espaces entre les nombres (ex: 100 000 000)
+					System.out.println(nomRegion+" : "+NumberFormat.getIntegerInstance().format(population)+" habitants");
 				}
 			}
 		}

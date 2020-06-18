@@ -1,5 +1,6 @@
 package fr.diginamic.recensement;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -43,7 +44,8 @@ public class RecherchePopulationDepartementTop10 extends MenuService {
 			for(String codeDepartement : mapDepartements.keySet()) {
 				//si la valeur correspond, on affiche
 				if(mapDepartements.get(codeDepartement) == population) {
-					System.out.println("("+codeDepartement+") : "+listePopulations.get(i)+" habitants");
+					//population avec espaces entre les nombres (ex: 100 000 000)
+					System.out.println("("+codeDepartement+") : "+NumberFormat.getIntegerInstance().format(population)+" habitants");
 				}
 			}
 

@@ -8,7 +8,7 @@ public class RecherchePopulationTop10ParDepartement extends MenuService {
 
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
-		System.out.println("Veuillez entrer le nom d'une région.");
+		System.out.println("Veuillez entrer le code d'un département.");
 		String codeDepartement = scanner.next();
 		Recensement villesDuDepartement = new Recensement();
 		//recherche dans toutes les villes de recensement
