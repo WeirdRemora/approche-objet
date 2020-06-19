@@ -1,14 +1,23 @@
 package sets;
 
+import fr.diginamic.testenumeration.Continent;
+
 public class Pays implements Comparable<Pays> {
 	private String nom;
 	private int nbHab;
 	private double PIBhab;
+	private Continent continent;
 	
 	public Pays(String nom, int nbHab, double pIBhab) {
 		this.nom = nom;
 		this.nbHab = nbHab;
-		PIBhab = pIBhab;
+		this.PIBhab = pIBhab;
+	}
+	public Pays(String nom, int nbHab, double pIBhab, Continent continent) {
+		this.nom = nom;
+		this.nbHab = nbHab;
+		this.PIBhab = pIBhab;
+		this.continent = continent;
 	}
 	
 	public double PIBtot() {
@@ -50,9 +59,21 @@ public class Pays implements Comparable<Pays> {
 	public void setPIBhab(double pIBhab) {
 		PIBhab = pIBhab;
 	}
+	/** Getter
+	 * @return the continent
+	 */
+	public Continent getContinent() {
+		return continent;
+	}
+	/** Setter
+	 * @param continent the continent to set
+	 */
+	public void setContinent(Continent continent) {
+		this.continent = continent;
+	}
 	@Override
 	public String toString() {
-		return nom + ": Nb habitants = " + nbHab + ", Pib/Hab = "+ PIBhab + ", PIB total = " + this.PIBtot()+"\n";
+		return nom + " ("+this.continent.getNom()+") "+ ": Nb habitants = " + nbHab + ", Pib/Hab = "+ PIBhab + ", PIB total = " + this.PIBtot()+"\n";
 	}
 
 	@Override
