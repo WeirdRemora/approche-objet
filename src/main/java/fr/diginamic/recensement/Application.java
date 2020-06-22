@@ -15,9 +15,9 @@ public class Application {
 		//Remplissage de l'instance recensement
 		Recensement recensement = new Recensement();
 		try {
-			File file = new File("recensement 2016.csv");
+			File file = new File("recensement 2016.csv"); //fichier Ã  la racine du projet pour l'avoir dans le git
 			List<String> lignes = FileUtils.readLines(file, "UTF-8");
-			lignes.remove(0);
+			lignes.remove(0); //on enlÃ¨ve la ligne de noms des attributs
 			for(String ligne : lignes) {
 				String[] morceaux = ligne.split(";");
 				String codeRegion = morceaux[0];
@@ -27,11 +27,11 @@ public class Application {
 				String nomCommune = morceaux[6];
 				String population = morceaux[7];
 				
-				// Pour la population, avant la conversion en int, il faut d’abord supprimer les
-				// espaces qui se trouvent à l’intérieur.
+				// Pour la population, avant la conversion en int, il faut dï¿½abord supprimer les
+				// espaces qui se trouvent ï¿½ lï¿½intï¿½rieur.
 				int populationTotale = Integer.parseInt(population.replace(" ", "").trim());
 				
-				// On cree maintenant la ville avec toutes ses données utiles
+				// On cree maintenant la ville avec toutes ses donnï¿½es utiles
 				Region region = new Region(nomRegion,codeRegion);
 				Departement departement = new Departement(region,codeDepartement);
 				Ville ville = new Ville(region,departement,codeCommune,nomCommune,populationTotale);
@@ -43,53 +43,53 @@ public class Application {
 		
 		int choix = 0;
 		do {
-			System.out.println("1. Population d’une ville donnée\n"
-					+ "2. Population d’un département donné\n"
-					+ "3. Population d’une région donnée\n"
-					+ "4. Afficher les 10 régions les plus peuplées\n"
-					+ "5. Afficher les 10 départements les plus peuplés\n"
-					+ "6. Afficher les 10 villes les plus peuplées d’un département\n"
-					+ "7. Afficher les 10 villes les plus peuplées d’une région\n"
-					+ "8. Afficher les 10 villes les plus peuplées de France\n"
+			System.out.println("1. Population dï¿½une ville donnï¿½e\n"
+					+ "2. Population dï¿½un dï¿½partement donnï¿½\n"
+					+ "3. Population dï¿½une rï¿½gion donnï¿½e\n"
+					+ "4. Afficher les 10 rï¿½gions les plus peuplï¿½es\n"
+					+ "5. Afficher les 10 dï¿½partements les plus peuplï¿½s\n"
+					+ "6. Afficher les 10 villes les plus peuplï¿½es dï¿½un dï¿½partement\n"
+					+ "7. Afficher les 10 villes les plus peuplï¿½es dï¿½une rï¿½gion\n"
+					+ "8. Afficher les 10 villes les plus peuplï¿½es de France\n"
 					+ "9. Sortir");
 			choix = scanner.nextInt();
 			switch(choix) {
-			//Population d’une ville donnée
+			//Population dï¿½une ville donnï¿½e
 			case(1):
 				MenuService recherche = new RecherchePopulationVille();
 				recherche.traiter(recensement, scanner);
 				break;
-			//Population d’un département donné
+			//Population dï¿½un dï¿½partement donnï¿½
 			case(2):
 				recherche = new RecherchePopulationDepartement();
 				recherche.traiter(recensement, scanner);
 				break;
-			//Population d’une région donnée
+			//Population dï¿½une rï¿½gion donnï¿½e
 			case(3):
 				recherche = new RecherchePopulationRegion();
 				recherche.traiter(recensement, scanner);
 				break;
-			//Afficher les 10 régions les plus peuplées
+			//Afficher les 10 rï¿½gions les plus peuplï¿½es
 			case(4):
 				recherche = new RecherchePopulationRegionTop10();
 				recherche.traiter(recensement, scanner);
 				break;
-			//Afficher les 10 départements les plus peuplés
+			//Afficher les 10 dï¿½partements les plus peuplï¿½s
 			case(5):
 				recherche = new RecherchePopulationDepartementTop10();
 				recherche.traiter(recensement, scanner);
 				break;
-			//Afficher les 10 villes les plus peuplées d’un département
+			//Afficher les 10 villes les plus peuplï¿½es dï¿½un dï¿½partement
 			case(6):
 				recherche = new RecherchePopulationTop10ParDepartement();
 				recherche.traiter(recensement, scanner);
 				break;
-			//Afficher les 10 villes les plus peuplées d’une région
+			//Afficher les 10 villes les plus peuplï¿½es dï¿½une rï¿½gion
 			case(7):
 				recherche = new RecherchePopulationVilleTop10ParRegion();
 				recherche.traiter(recensement, scanner);
 				break;
-			//Afficher les 10 villes les plus peuplées de France
+			//Afficher les 10 villes les plus peuplï¿½es de France
 			case(8):
 				recherche = new RecherchePopulationVilleTop10();
 				recherche.traiter(recensement, scanner);
