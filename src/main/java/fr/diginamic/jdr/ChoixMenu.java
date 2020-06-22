@@ -2,8 +2,15 @@ package fr.diginamic.jdr;
 
 import java.util.Scanner;
 
+/** On regroupe les méthodes du menu ici pour alléger les main
+ * @author Leo
+ */
 public class ChoixMenu {
 
+	/** Demande à l'utilisateur de choisir une classe de héros et renvoie un objet de cette classe
+	 * @param sc Scanner
+	 * @return Un nouveau héros de la classe choisie
+	 */
 	public static Heros choixClasse(Scanner sc) {
 		int choix = 0;
 		do {
@@ -25,6 +32,9 @@ public class ChoixMenu {
 		
 	}
 	
+	/**
+	 * @return un monstre aléatoire
+	 */
 	public static Creature creatureAleatoire() {
 		int nbCreatures = 3;
 		int rd = (int)(Math.random()*(nbCreatures))+1;

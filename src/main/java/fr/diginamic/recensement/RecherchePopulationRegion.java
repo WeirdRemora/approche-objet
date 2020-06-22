@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class RecherchePopulationRegion extends MenuService {
 
+	/** Demande le nom d'une région puis calcule la population totale de cette région
+	 * en parcourant la liste des villes du recensement et en additionant leur population
+	 */
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 		System.out.println("Veuillez entrer le nom d'une région.");

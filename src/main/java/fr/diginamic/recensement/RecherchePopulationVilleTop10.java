@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class RecherchePopulationVilleTop10 extends MenuService {
 
+	/** Affiche les 10 villes les plus peuplées de France
+	 */
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 		//on trie les villes par population par ordre décroissant

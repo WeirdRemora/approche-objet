@@ -54,38 +54,47 @@ public class Application {
 					+ "9. Sortir");
 			choix = scanner.nextInt();
 			switch(choix) {
+			//Population d’une ville donnée
 			case(1):
 				MenuService recherche = new RecherchePopulationVille();
 				recherche.traiter(recensement, scanner);
 				break;
+			//Population d’un département donné
 			case(2):
 				recherche = new RecherchePopulationDepartement();
 				recherche.traiter(recensement, scanner);
 				break;
+			//Population d’une région donnée
 			case(3):
 				recherche = new RecherchePopulationRegion();
 				recherche.traiter(recensement, scanner);
 				break;
+			//Afficher les 10 régions les plus peuplées
 			case(4):
 				recherche = new RecherchePopulationRegionTop10();
 				recherche.traiter(recensement, scanner);
 				break;
+			//Afficher les 10 départements les plus peuplés
 			case(5):
 				recherche = new RecherchePopulationDepartementTop10();
 				recherche.traiter(recensement, scanner);
 				break;
+			//Afficher les 10 villes les plus peuplées d’un département
 			case(6):
 				recherche = new RecherchePopulationTop10ParDepartement();
 				recherche.traiter(recensement, scanner);
 				break;
+			//Afficher les 10 villes les plus peuplées d’une région
 			case(7):
 				recherche = new RecherchePopulationVilleTop10ParRegion();
 				recherche.traiter(recensement, scanner);
 				break;
+			//Afficher les 10 villes les plus peuplées de France
 			case(8):
 				recherche = new RecherchePopulationVilleTop10();
 				recherche.traiter(recensement, scanner);
 				break;
+			//Sortir
 			case(9):
 				System.out.println("Au revoir !");
 				break;

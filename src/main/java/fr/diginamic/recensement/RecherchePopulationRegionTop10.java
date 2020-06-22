@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 public class RecherchePopulationRegionTop10 extends MenuService {
 
+	/** Affiche les 10 régions les plus peuplées
+	 */
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 		

@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class RecherchePopulationDepartement extends MenuService {
 
+	/** Demande le code d'un département puis cherche dans la liste de villes du recensement
+	 * pour afficher sa population
+	 */
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 		System.out.println("Veuillez entrer le code d'un département.");

@@ -16,6 +16,8 @@ public class FusionMap {
 		map2.put(5, "Bleu");
 		map2.put(6, "Orange");
 		
+		//Créer une map appelée map3 et qui contient l’ensemble des données des 2 maps
+		//précédentes avec les mêmes clés et les mêmes valeurs
 		HashMap<Integer, String> map3 = new HashMap<Integer, String>();
 		for(Integer key : map1.keySet()) {
 			map3.put(key, map1.get(key));

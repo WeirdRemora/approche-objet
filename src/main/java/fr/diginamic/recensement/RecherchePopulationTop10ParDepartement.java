@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class RecherchePopulationTop10ParDepartement extends MenuService {
 
+	/** Demande le code d'un département puis affiche les 10 villes les plus peuplées de ce département
+	 */
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 		System.out.println("Veuillez entrer le code d'un département.");

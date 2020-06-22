@@ -1,7 +1,4 @@
-package fr.diginamic.essais;
-
-import fr.diginamic.parseur.Expression;
-import fr.diginamic.parseur.Parser;
+package fr.diginamic.parseur;
 
 public class TestParseur {
 

@@ -2,6 +2,10 @@ package fr.diginamic.parseur;
 
 public class Parser {
 	
+	/** Prend une expression en String, la décompose grâce à la magie des regex et en fait un objet Expression
+	 * @param chaine Chaîne de caractères de l'expression
+	 * @return Expression
+	 */
 	public static Expression parse(String chaine) {
 		//Regex pour nombre à virgule ou lettre : [+-]?\d*[.]?\w+
 		//Regex pour opérateur : [\+\-\*/]

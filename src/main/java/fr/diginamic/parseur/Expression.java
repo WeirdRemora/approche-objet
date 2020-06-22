@@ -6,12 +6,22 @@ public class Expression {
 	private char operateur;
 	private String nbDroite;
 	
+	/** Constructeur
+	 * @param nbGauche Nombre ou lettres à gauche de l'opérateur
+	 * @param operateur Opérateur
+	 * @param nbDroite Nombre ou lettres à droite de l'opérateur
+	 */
 	public Expression(String nbGauche, char operateur, String nbDroite) {
 		this.nbGauche = nbGauche;
 		this.operateur = operateur;
 		this.nbDroite = nbDroite;
 	}
 	
+	/** Évalue le résultat d'une expression en remplaçant une variable par une valeur donnée
+	 * @param var Nom de la variable dans l'expression
+	 * @param val Valeur de la variable
+	 * @return le résultat de l'expression en remplaçant la variable par sa valeur
+	 */
 	public double evaluer(String var, double val) {
 		//variable à gauche, nombre à droite
 		if(nbGauche.equals(var) && !nbDroite.equals(var)) {
@@ -35,6 +45,11 @@ public class Expression {
 		}
 	}
 	
+	/** Calcule le résultat d'une expression avec des nombres en fonction de l'opérateur
+	 * @param constGauche Nombre de gauche (double)
+	 * @param constDroite Nombre de droite (double)
+	 * @return Résultat de l'expression (double)
+	 */
 	private double evaluer(double constGauche, double constDroite) {
 		switch(operateur) {
 		case('+'):

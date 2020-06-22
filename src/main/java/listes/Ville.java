@@ -4,6 +4,10 @@ public class Ville {
 	private String nom;
 	private int nbHabitants;
 	
+	/** Constructeur
+	 * @param nom Nom
+	 * @param nbHabitants Nombre d'habitants
+	 */
 	public Ville(String nom, int nbHabitants) {
 		this.nom = nom;
 		this.nbHabitants = nbHabitants;

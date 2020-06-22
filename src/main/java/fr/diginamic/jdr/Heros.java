@@ -4,10 +4,14 @@ public abstract class Heros extends Personnage {
 	
 	private int score;
 	
+	/** Affiche le score
+	 */
 	public void afficherScore() {
 		System.out.println("Score : "+score);
 	}
 	
+	/** Affiche la force et les points de vie
+	 */
 	public void afficherStats() {
 		System.out.println("Force : "+this.getForce()+"\n"
 				+ "PV : "+this.getPvMax());

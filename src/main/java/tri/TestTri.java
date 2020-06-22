@@ -20,13 +20,18 @@ public class TestTri {
 		listePays.add(new Pays("Russie", 126_434_660, 27900));
 		listePays.add(new Pays("Inde", 1_386_249_417, 5174));
 		
+		//Tri par PIB/hab avec Comparable (tri par ordre alphabétique a été omis parce qu'on a changé le compareTo)
+		System.out.println("Tri par PIB/hab avec Comparable :");
 		Collections.sort(listePays);
+		System.out.println(listePays);
 		
-		System.out.println("Tri par nombre d'habitants :");
+		//Tri par nombre d'habitants avec Comparator
+		System.out.println("Tri par nombre d'habitants avec Comparator :");
 		Collections.sort(listePays, new ComparatorHabitant());
 		System.out.println(listePays);
 		
-		System.out.println("Tri par PIB/hab :");
+		//Tri par PIB/hab avec Comparator
+		System.out.println("Tri par PIB/hab avec Comparator :");
 		Collections.sort(listePays, new ComparatorPibHabitant());
 		System.out.println(listePays);
 		

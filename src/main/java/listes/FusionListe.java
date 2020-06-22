@@ -15,6 +15,9 @@ public class FusionListe {
 		liste2.add("Bleu");
 		liste2.add("Orange");
 		
+		//Créer en utilisant des boucles une liste appelée liste3 et qui contient l’ensemble des
+		//données des 2 listes précédentes.
+		
 		List<String> liste3 = new ArrayList<String>();
 		for ( String i : liste1 ) {
 			liste3.add(i);

@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class RecherchePopulationVille extends MenuService {
 
+	/** Demande le nom d'une ville puis affiche sa population
+	 */
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 		System.out.println("Veuillez entrer le nom d'une ville.");

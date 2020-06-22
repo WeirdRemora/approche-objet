@@ -8,11 +8,23 @@ public class Pays implements Comparable<Pays> {
 	private double PIBhab;
 	private Continent continent;
 	
+	/** Constructeur
+	 * @param nom
+	 * @param nbHab Nombre d'habitants
+	 * @param pIBhab PIB par habitant
+	 */
 	public Pays(String nom, int nbHab, double pIBhab) {
 		this.nom = nom;
 		this.nbHab = nbHab;
 		this.PIBhab = pIBhab;
+		this.continent = Continent.INCONNU;
 	}
+	/** Constructeur
+	 * @param nom
+	 * @param nbHab Nombre d'habitants
+	 * @param pIBhab PIB par habitant
+	 * @param continent
+	 */
 	public Pays(String nom, int nbHab, double pIBhab, Continent continent) {
 		this.nom = nom;
 		this.nbHab = nbHab;
@@ -76,6 +88,8 @@ public class Pays implements Comparable<Pays> {
 		return nom + " ("+this.continent.getNom()+") "+ ": Nb habitants = " + nbHab + ", Pib/Hab = "+ PIBhab + ", PIB total = " + this.PIBtot()+"\n";
 	}
 
+	/** Compare deux pays en fonction de leur PIB par habitant
+	 */
 	@Override
 	public int compareTo(Pays pays) {
 		Double d1 = this.PIBhab;

@@ -1,5 +1,8 @@
 package fr.diginamic.jdr;
 
+/** Classe spéciale parce que je voulais m'amuser
+ * @author Leo
+ */
 public class Voleur extends Heros {
 	
 	private static final int FORCEMIN = 8;
@@ -15,6 +18,9 @@ public class Voleur extends Heros {
 		this.dexterite = dexInit();
 	}
 	
+	/** Le voleur a une chance d'infliger un coup critique infligeant 2x ses dégâts d'attaque selon sa valeur de dextérité
+	 * 10% de chance par point de dextérité
+	 */
 	public int attaque() {
 		boolean coupCritique = Math.random()*10 < dexterite;
 		int degats = super.attaque();
@@ -27,6 +33,9 @@ public class Voleur extends Heros {
 		}
 	}
 	
+	/** Le voleur a une chance d'esquiver les dégâts d'un coup pour recevoir 0 dégâts à la place selon sa valeur de dextérité
+	 * 10% de chance par point de dextérité
+	 */
 	public int encaisse(int degats) {
 		boolean esquive = Math.random()*10 < dexterite;
 		if (esquive) {
@@ -39,6 +48,8 @@ public class Voleur extends Heros {
 		}
 	}
 	
+	/** Affiche également la dextérité
+	 */
 	public void afficherStats() {
 		super.afficherStats();;
 		System.out.println("Dextérité : "+dexterite);

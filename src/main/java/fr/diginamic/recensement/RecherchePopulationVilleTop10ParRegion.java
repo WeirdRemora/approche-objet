@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class RecherchePopulationVilleTop10ParRegion extends MenuService {
 
+	/** Demande un nom de région puis affiche les 10 villes les plus peuplées de cette région
+	 */
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 		System.out.println("Veuillez entrer le nom d'une région.");

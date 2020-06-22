@@ -11,10 +11,19 @@ public enum Saison {
 	String libelle;
 	int numero;
 	
+	/** Constructeur
+	 * @param libelle Libellé
+	 * @param numero Numéro
+	 */
 	private Saison(String libelle, int numero) {
 		this.libelle=libelle;
 		this.numero=numero;
 	}
+	/** Prend un libellé et renvoie une saison correspondant à ce libellé
+	 * Si le libellé n'est pas dans l'énumération, renvoie null
+	 * @param libelle Libellé
+	 * @return Saison
+	 */
 	public static Saison getSaison(String libelle) {
 		Saison[] listeSaison = Saison.values();
 		for(Saison saison : listeSaison) {
