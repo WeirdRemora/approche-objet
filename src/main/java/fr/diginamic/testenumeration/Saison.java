@@ -4,7 +4,7 @@ public enum Saison {
 	
 	
 	PRINTEMPS("Printemps",1),
-	ETE("Été",2),
+	ETE("Ã‰tÃ©",2),
 	AUTOMNE("Automne",3),
 	HIVER("Hiver",4);
 	
@@ -12,16 +12,16 @@ public enum Saison {
 	int numero;
 	
 	/** Constructeur
-	 * @param libelle Libellé
-	 * @param numero Numéro
+	 * @param libelle Libellï¿½
+	 * @param numero Numï¿½ro
 	 */
 	private Saison(String libelle, int numero) {
 		this.libelle=libelle;
 		this.numero=numero;
 	}
-	/** Prend un libellé et renvoie une saison correspondant à ce libellé
-	 * Si le libellé n'est pas dans l'énumération, renvoie null
-	 * @param libelle Libellé
+	/** Prend un libellï¿½ et renvoie une saison correspondant ï¿½ ce libellï¿½
+	 * Si le libellï¿½ n'est pas dans l'ï¿½numï¿½ration, renvoie null
+	 * @param libelle Libellï¿½
 	 * @return Saison
 	 */
 	public static Saison getSaison(String libelle) {

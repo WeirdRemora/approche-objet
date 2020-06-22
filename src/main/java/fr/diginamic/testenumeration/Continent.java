@@ -4,8 +4,8 @@ public enum Continent {
 	EUROPE("Europe"),
 	ASIE("Asie"),
 	AFRIQUE("Afrique"),
-	AMERIQUE("Amérique"),
-	OCEANIE("Océanie"),
+	AMERIQUE("AmÃ©rique"),
+	OCEANIE("OcÃ©anie"),
 	INCONNU("Inconnu");
 
 	private String nom;
